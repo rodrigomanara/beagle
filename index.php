@@ -9,20 +9,20 @@
 define("__ROOT", __DIR__  . DIRECTORY_SEPARATOR . "src");
 define("__VIEW", __DIR__ .     "/*/*/View");
 define("__CONFIG" , __ROOT  .  "/*/Config");
-define("__ROUTE" , __DIR__ ."/*/*/Config");
+define("__ROUTE" , __DIR__ ."/*/*/Config/Router");
 define("__CACHE", __DIR__ . DIRECTORY_SEPARATOR . "bin/cache" );
 define("__UPLOAD", __DIR__ . DIRECTORY_SEPARATOR . "bin/upload" );
 define("__FILES", __DIR__ . DIRECTORY_SEPARATOR . "bin/hashed" );
 
 ######## email config ######
-define("__emailFrom", "get-in-touch@rodrigomanara.co.uk");
-define("__email","me@rodrigomanara.co.uk" );
-define("__name", "Rodrigo Manara" );
-define("pwd_email", "asd*7unsa4");
+define("__emailFrom", "");
+define("__email","" );
+define("__name", "" );
+define("pwd_email", "");
 
 ###### google recaptcha
-define("site_key", "6LeXR-USAAAAADcOZqqxXV8s3GRS3AX_Um8LoFs_");
-define("secret_key", "6LeXR-USAAAAAJ7NQjpy873xMn8EhfyOo1lao5pj");
+define("site_key", "");
+define("secret_key", "");
 
 ############# Error ##############
 error_reporting( E_ALL );
@@ -46,7 +46,7 @@ include_once './vendor/autoload.php';
 #                                               #
 #################################################
 define('__host', 'localhost');
-define('__database', 'portfolio');
+define('__database', 'database');
 define('__username', 'root');
 define('__password', '');
 define('__charset', 'utf8');
