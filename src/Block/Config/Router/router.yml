@@ -1,0 +1,24 @@
+## YAML Template.
+---
+home_page:
+        class: Main
+        method: Home
+        namespace : Block\Controller
+        url: "/" 
+details_page:
+        class: Main
+        method: DetailsCV
+        namespace : Block\Controller
+        url: "/profissional_details"  
+        
+contact_page:
+        class: Main
+        method: Contact
+        namespace : Block\Controller
+        url: "/contact"    
+        
+project_page:
+        class: Main
+        method: Project
+        namespace : Block\Controller
+        url: "/project"           

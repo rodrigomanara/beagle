@@ -1,0 +1,32 @@
+{
+    "name": "youcanadin/portolio",
+    "authors": [
+        {
+            "name": "Rodrigo Manara",
+            "email": "me@rodrigomanara.co.uk"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "3.2.*",
+        "symfony/var-dumper": "3.2.*",
+        "symfony/routing": "3.2.*",
+        "twig/twig": "^1.28", 
+        "symfony/finder": "3.2.*",
+        "symfony/yaml": "3.2.*",
+        "symfony/console": "^3.2",
+        "phpmailer/phpmailer": "~5.2" 
+    },
+    "autoload": {
+        "psr-4": {
+            "Application\\Sys\\": "bin/Application/Sys",
+            "Application\\Helper\\": "bin/Application/Helper",
+            "Application\\Firewall\\": "bin/Application/Firewall",
+            "Application\\DB\\": "bin/Application/DB",
+            "Application\\Controller\\": "bin/Application/Controller",
+            "Block\\": "src/Block"
+        }
+    },
+    "archive": {
+        "exclude": ["vendor"]
+    }
+}
