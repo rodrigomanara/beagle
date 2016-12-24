@@ -1,0 +1,15 @@
+{% extends "content.html.twig" %}
+
+{% block img_icon %}
+    <div style="width: 50px;height: 50px">
+         
+            <a href="#" class="blue-text btn-floating btn-large waves-effect waves-light red"> <i class="medium material-icons">info_outline</i> </a> 
+        
+    </div>
+{% endblock img_icon%}
+
+{% block content %}
+    <h6 class="center-align">Sorry </h6>
+    <p class="center-align">but something went wrong</p>
+    <div class="container">{{ error }}</div>
+{% endblock %}

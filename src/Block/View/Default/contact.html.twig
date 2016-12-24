@@ -1,0 +1,120 @@
+{% extends "content.html.twig" %}
+
+{% block content %}
+    <h5 class="center-align">Contact</h5>
+    <div>
+        <div class="row">
+            {% if email_sent_response == false %}
+                <form class="col s12" id="formValidate" action="{{ form_url }}" method="post">
+                    <div class="row">
+
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input  id="first_name" name="first_name" type="text" class="validate" required>
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" name="last_name" type="text" class="validate" required>
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">email</i>
+                            <input id="email" type="email" name="email" class="validate" required>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">comment</i>
+
+                            <textarea id="textarea" name="textarea" class="materialize-textarea" required></textarea>
+                            <label for="textarea1">Textarea</label>
+                        </div>
+                    </div>
+                    <div class="input-field col s12">
+                        <button class="btn waves-effect waves-light right" type="submit" name="action">Submit
+                            <i class="mdi-content-send right"></i>
+                        </button>
+                    </div>
+                </form>
+            {% else %}
+                <div class="row">
+                    <div class="col  offset-l4 s6" >
+                        {% for i in email_sent_response %}
+                            <p>  {{ i }} </p>
+                        {% endfor %}    
+
+                        <div class="preloader-wrapper big active center-align">
+                            <div class="spinner-layer spinner-blue-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div><div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div><div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <script>
+                    reloadForm();
+                    function reloadForm() {
+                        setTimeout(function () {
+                            window.location.href = '{{ url('home_page') }}';
+                        }, 1000);
+
+                    }
+                </script>        
+            {% endif %}    
+        </div>
+
+    </div>
+{% endblock content %}
+
+{% block footer %}
+    {{ parent() }}
+    <script type="text/javascript" src="src/Block/View/public/js/jquery.validate.min.js"></script>
+    <script>
+
+        $("#formValidate").validate({
+            rules: {
+                first_name: {
+                    required: true,
+                    minlength: 3
+                },
+                last_name: {
+                    required: true,
+                    minlength: 3
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+
+                textarea: {
+                    required: true,
+                    minlength: 15
+                }
+
+            },
+
+            errorElement: 'div',
+            errorPlacement: function (error, element) {
+                var placement = $(element).data('error');
+                if (placement) {
+                    $(placement).append(error)
+                } else {
+                    error.insertAfter(element);
+                }
+            }
+        });
+
+
+    </script>
+{% endblock %}    

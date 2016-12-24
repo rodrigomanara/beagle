@@ -1,0 +1,18 @@
+{# empty Twig template #}
+{% extends "template.html.twig" %}
+{% block container %}
+    <div class="container">
+        <div id="block" class="col s12 white lighten-5 z-depth-1">
+            <div id="img-box">
+                {% block img_icon %}
+                    <img src="src/Block/View/public/image/rodrigo.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+                {% endblock img_icon%}
+            </div>
+
+            <h6> {{ first_name ~ " " ~ last_name }} </h6>
+            <p>
+                {{ textarea }}
+            </p>
+        </div>
+    </div>
+{% endblock container %}    
