@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Application\Helper;
+namespace Beagle\Application\Helper;
 
 use Symfony\Component\Finder\Finder;
-use Application\Helper\TwigHelper;
+use Beagle\Application\Helper\TwigHelper;
 
 /**
  * Description of TwigExtension

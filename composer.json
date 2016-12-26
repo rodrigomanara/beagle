@@ -7,22 +7,18 @@
         }
     ],
     "require": {
-        "symfony/http-foundation": "3.2.*",
-        "symfony/var-dumper": "3.2.*",
-        "symfony/routing": "3.2.*",
+        "symfony/http-foundation": "3.1.*",
+        "symfony/var-dumper": "3.1.*",
+        "symfony/routing": "3.1.*",
         "twig/twig": "^1.28", 
-        "symfony/finder": "3.2.*",
-        "symfony/yaml": "3.2.*",
-        "symfony/console": "^3.2",
-        "phpmailer/phpmailer": "~5.2" 
+        "symfony/finder": "3.1.*",
+        "symfony/console": "3.1.*",
+        "phpmailer/phpmailer": "~5.2",
+        "mustangostang/spyc": "^0.6.1" 
     },
     "autoload": {
         "psr-4": {
-            "Application\\Sys\\": "bin/Application/Sys",
-            "Application\\Helper\\": "bin/Application/Helper",
-            "Application\\Firewall\\": "bin/Application/Firewall",
-            "Application\\DB\\": "bin/Application/DB",
-            "Application\\Controller\\": "bin/Application/Controller",
+            "Beagle\\": "bin/",
             "Block\\": "src/Block"
         }
     },

@@ -61,8 +61,8 @@ define('__driver', 'mysql');
 #################################
  
 
-$router = new Application\Helper\Router();
-$init = new Application\Sys\init($router);
+$router = new Beagle\Application\Helper\Router();
+$init = new Beagle\Application\Sys\init($router);
 $init->main();
 
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\DB;
+namespace Beagle\Application\DB;
 
 /**
  * Description of MySQLi

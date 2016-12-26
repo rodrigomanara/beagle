@@ -6,11 +6,11 @@
  * and open the template in the editor.
  */
 
-namespace Application\Sys;
+namespace Beagle\Application\Sys;
 
-use Application\Sys\Component;
-use Application\Sys\TwigWrapper;
-use Application\Helper\Router;
+use Beagle\Application\Sys\Component;
+use Beagle\Application\Sys\TwigWrapper;
+use Beagle\Application\Helper\Router;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 /**

@@ -1,15 +1,14 @@
 <?php
 
-namespace Application\Helper;
+namespace Beagle\Application\Helper;
 
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Finder\Finder;
-use Application\Sys\YAMLWrapper;
-use Application\Sys\Component;
-
+use Beagle\Application\Sys\YAMLWrapper;
+use Beagle\Application\Sys\Component;
 /**
  * Description of Router
  *
@@ -52,6 +51,7 @@ class Router extends Component {
             
        
         }
+     
  
         $url = $this->rewriteRouter();
 

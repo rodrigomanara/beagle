@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\Firewall;
+namespace Beagle\Application\Firewall;
 
  
 

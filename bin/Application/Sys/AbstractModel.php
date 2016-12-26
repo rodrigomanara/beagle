@@ -1,8 +1,8 @@
 <?php
 
-namespace Application\Sys;
+namespace Beagle\Application\Sys;
 
-use Application\DB\MySQLi;
+use Beagle\Application\DB\MySQLi;
 
 /**
  * Description of AbstractModel

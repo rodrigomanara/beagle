@@ -1,16 +1,10 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ 
+namespace Beagle\Application\Sys;
 
-namespace Application\Sys;
-
-use Application\Sys\Component;
-use Application\Helper\Router;
-use Symfony\Component\HttpFoundation\Session\Session;
+use Beagle\Application\Sys\Component;
+use Beagle\Application\Helper\Router;
 /**
  * Description of init
  *
@@ -33,9 +27,10 @@ class init extends Component {
      * 
      */
     public function main() {
-
+        
+        
         $getClass = $this->routeCollection->getClass();
-
+ 
         if (isset($getClass['method']) and ( empty($getClass['method']) or is_null($getClass['method']))) {
             $this->routeCollection->redirectTo('/error');
         } else {

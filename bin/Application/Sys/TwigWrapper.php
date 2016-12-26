@@ -1,9 +1,9 @@
 <?php
 
-namespace Application\Sys;
+namespace Beagle\Application\Sys;
 
 use Symfony\Component\Finder\Finder;
-use Application\Helper\TwigExtension;
+use Beagle\Application\Helper\TwigExtension;
 
 /**
  * Description of TwigWrapper
@@ -38,6 +38,7 @@ class TwigWrapper {
         foreach ($finder as $file) {
             $path[] = $file->getPath();
         }
+         
 
         $this->loader = new \Twig_Loader_Filesystem($path);
         $this->twig = new \Twig_Environment($this->loader, array());

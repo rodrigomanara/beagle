@@ -1,0 +1,20 @@
+## YAML Template.
+---
+home_page:
+    class: Home
+    method: index
+    namespace : Beagle\CMS\Controller
+    url: "/" 
+
+login_page:
+    class: Login 
+    method: index
+    namespace : Beagle\CMS\Controller
+    url: "/login" 
+    
+login_page:
+    class: Error 
+    method: index
+    namespace : Beagle\CMS\Controller
+    url: "/error"     
+    

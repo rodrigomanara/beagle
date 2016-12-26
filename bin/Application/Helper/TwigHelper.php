@@ -1,11 +1,11 @@
 <?php
 
  
-namespace Application\Helper;
+namespace Beagle\Application\Helper;
 
 
 use Symfony\Component\HttpFoundation\Request;
-use Application\Helper\Router;
+use Beagle\Application\Helper\Router;
 /**
  * Description of TwigHelper
  *

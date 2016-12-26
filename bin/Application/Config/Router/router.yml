@@ -1,5 +1,8 @@
+
+    
 error_page:
-        class: DefaultController
-        method: index
-        namespace : Application\Controller
-        url: "/error"
+    class: DefaultController 
+    method: index
+    namespace : Beagle\Application\Controller
+    url: "/error"     
+    

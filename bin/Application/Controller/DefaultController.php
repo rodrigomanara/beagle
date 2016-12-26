@@ -1,8 +1,8 @@
 <?php
 
-namespace Application\Controller;
+namespace Beagle\Application\Controller;
 
-use Application\Sys\AbstractController as Controller;
+use Beagle\Application\Sys\AbstractController as Controller;
 
 /**
  * Description of Default
@@ -11,9 +11,12 @@ use Application\Sys\AbstractController as Controller;
  */
 class DefaultController extends Controller {
 
-//put your code here
+public function index() {
+       
+        $this->view("index.html.twig", array('error' => ""));
+    }
 
-    public function index() {
+    public function error() {
        
         $this->view("error.html.twig", array('error' => ""));
     }

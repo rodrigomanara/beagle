@@ -7,7 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
-    'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
     'Symfony\\Component\\Routing\\' => array($vendorDir . '/symfony/routing'),
     'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
@@ -16,9 +15,5 @@ return array(
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Block\\' => array($baseDir . '/src/Block'),
-    'Application\\Sys\\' => array($baseDir . '/bin/Application/Sys'),
-    'Application\\Helper\\' => array($baseDir . '/bin/Application/Helper'),
-    'Application\\Firewall\\' => array($baseDir . '/bin/Application/Firewall'),
-    'Application\\DB\\' => array($baseDir . '/bin/Application/DB'),
-    'Application\\Controller\\' => array($baseDir . '/bin/Application/Controller'),
+    'Beagle\\' => array($baseDir . '/bin'),
 );

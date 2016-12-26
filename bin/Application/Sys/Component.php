@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\Sys;
+namespace Beagle\Application\Sys;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
