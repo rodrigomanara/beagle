@@ -1,4 +1,4 @@
-/vendor/
-/src/Block/*
-/nbproject/
-/temp/
+vendor/
+src/Block/*
+nbproject/
+temp/

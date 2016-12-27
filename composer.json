@@ -30,7 +30,6 @@
         }
     },
     "archive": {
-        "exclude": ["vendor"],
-        "exclude": ["test"]
+        "exclude": ["vendor" , "test"] 
     }
 }
