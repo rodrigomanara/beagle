@@ -4,7 +4,7 @@ php:
 sudo: required  
 before_script:
   - composer update 
-  
+install: php vendor/vendors.php  
 notifications:
   email:
     - me@rodrigomanara.co.uk
