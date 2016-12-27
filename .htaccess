@@ -12,5 +12,3 @@ RewriteRule ^(.*)$ index.php?query=$1 [QSA,L]
 
 
 
-
-

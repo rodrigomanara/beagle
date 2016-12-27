@@ -3,7 +3,7 @@
 
 namespace Beagle\Application\Sys;
 
-//use Symfony\Component\Yaml\Yaml;
+use Beagle\Application\Exception\ExceptionWrapper;
 
 /**
  * Description of YAMLWrapper
@@ -19,6 +19,16 @@ class YAMLWrapper {
             return $value;
         } catch (ParseException $e) {
             printf("Unable to parse the YAML string: %s", $e->getMessage());
+        }
+    }
+    public function writer($path , array $content, $level = 3){
+        
+        try{
+        \Spyc::YAMLDump($content , $level);
+        } catch (\Exception $e){
+            $exception = new ExceptionWrapper("yaml");
+            $exception->addWarning('yaml' , ['message' => $e->getMessage() ]);
+            
         }
     }
 }

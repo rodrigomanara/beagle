@@ -42,7 +42,7 @@ abstract class AbstractController extends Component {
     public function __construct(Router $router) {
         //setup main components
         $this->router = $router;
-        $this->twig = new TwigWrapper(); 
+        $this->twig = new TwigWrapper($router);  
     }
 
     protected function getRouter() {

@@ -1,7 +1,0 @@
-## YAML Template.
----
-home_page:
-        class: Main
-        method: Home
-        namespace : Block\Controller
-        url: "/" 

@@ -1,0 +1,69 @@
+{% extends "template.html.twig" %}
+
+{% block body %}
+    <div class="row">
+        <div class="clearfix">&nbsp;</div>
+        <div class="clearfix">&nbsp;</div>
+        <div id="img-box" style="position: absolute">
+            {% block img_icon %}
+                <img src="src/Block/View/public/image/rodrigo.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+            {% endblock img_icon%}
+        </div>
+
+
+        <div id="block" class="col s12 white lighten-5 z-depth-1">
+            {% block content %}
+                <h5 class="center-align">Rodrigo Manara</h5>
+                <p>
+                    <strong> FullStack Web Developer:</strong> 
+                    Creative and self-taught, happy and very curious by the way! <br/>
+                    He loves music and cinema, great on cooking says his wife and he loves play video with his son. Origionally from Brazil but lives in UK more or less  17 years.
+                </p>
+                <p> He has more than 10 years experience on web development and design, with AS ,HNC and HN certificate with double merits course graphic design course between  2002 and 2002 at South Thames College. He loves tecnology and his started work with computers in 2000 by working on fixing destops and setup OS.  </p>
+            {% endblock content %}
+        </div>
+
+    </div>
+
+{% endblock body %}
+
+{% block footer %}
+    <script src="bin/CMS/View/public/js/jQueryRotate.js"></script>
+
+    <script>
+        var block = $('#block');
+        var image_box = $('#img-box');
+
+        image_box.hide();
+
+        $(window).resize(function () {
+            moveImage();
+        }).load(function () {
+            moveImage();
+        });
+
+        function moveImage() {
+
+            var offset = block.offset();
+            var top = offset.top;
+            var left = offset.left;
+
+            image_box.css({
+                'top': top - (image_box.width() / 2),
+                'left': left - (image_box.height() / 2),
+                'position': 'absolute'
+            });
+            image_box.fadeIn('show');
+            image_box.rotate({ bind: {
+                    mouseover: function () {
+                        $(this).rotate({animateTo: 360});
+                    },
+                    mouseout: function () {
+                        $(this).rotate({animateTo: 0});
+                    }
+                }
+            });
+
+        }
+    </script>
+{% endblock footer %} 

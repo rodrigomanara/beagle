@@ -1,20 +1,29 @@
-## YAML Template.
----
-home_page:
-    class: Home
+dashboard_page:
+    class: Dashboard
     method: index
     namespace : Beagle\CMS\Controller
-    url: "/" 
+    url: "/admin/dashboard" 
+    
+login_page:
+    class: User 
+    method: login
+    namespace : Beagle\CMS\Controller
+    url: "/admin/login" 
 
-login_page:
-    class: Login 
+register_page:
+    class: User 
+    method: register
+    namespace : Beagle\CMS\Controller
+    url: "/admin/register"
+    
+update_page:
+    class: User 
+    method: update
+    namespace : Beagle\CMS\Controller
+    url: "/admin/user/update"    
+    
+home_page:
+    class: Page
     method: index
     namespace : Beagle\CMS\Controller
-    url: "/login" 
-    
-login_page:
-    class: Error 
-    method: index
-    namespace : Beagle\CMS\Controller
-    url: "/error"     
-    
+    url: "/{page_id}"    

@@ -1,0 +1,31 @@
+html { 
+    margin: 0px;
+    padding: 0px;
+}
+
+.error{
+    position: relative;
+    top: -1rem;
+    left: 0rem;
+    font-size: 0.8rem;
+    color:#FF4081;
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%);
+}
+
+
+.height-100{
+    min-height: 100vh; /* use "vh" instead of % */
+    position: relative;
+    left: -15px;
+    overflow-y: auto;
+}
+
+.collection-remove-margin-top{
+ margin-top: 0px !important;   
+}
+.remove-row-margin{
+    margin-bottom: 0px !important;
+}

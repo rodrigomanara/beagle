@@ -9,27 +9,44 @@ use Symfony\Component\Routing\Route;
 use Symfony\Component\Finder\Finder;
 use Beagle\Application\Sys\YAMLWrapper;
 use Beagle\Application\Sys\Component;
+use Beagle\Application\Exception\ExceptionRouter;
+
 /**
  * Description of Router
  *
  * @author Rodrigo Manara <me@rodrigomanara.co.uk>
  */
 class Router extends Component {
-
+    
+    
     //put your code here
     private $routeCollection;
 
+    /**
+     *
+     * @var ExceptionHandler 
+     */
+    private $exception;
+
     public function __construct() {
         $this->routeCollection = new RouteCollection();
+        $this->exception = new ExceptionRouter("router");
     }
 
     /**
      * 
      * @return type
      */
-    public function getClass() {
-        $router = $this->route();
-        return array('class' => $router['namespace'] . "\\" . $router['controller'], 'method' => $router['method']);
+    public function getClass(array $router = NULL) {
+
+        if($router == NULL) {
+            $router = $this->route();
+            if (empty($router) or is_null($router)) {
+                return null;
+            }
+        }
+        
+        return array('class' => $router['namespace'] . "\\" . $router['controller'], 'method' => $router['method'], "namespace" => $router['namespace']);
     }
 
     /**
@@ -40,27 +57,26 @@ class Router extends Component {
     private function route() {
 
         $finder = new Finder();
-        $finder->files()->in(__ROUTE)->name('*router.yml');
-       
+        $finder->files()->in(self::ROUTE)->name('*router.yml');
+
         $yaml = new YAMLWrapper();
 
         foreach ($finder as $file) {
-            
             $router = $yaml->read($file->getRealPath());
-            if(!is_null($router)) $this->setRouter($router);
-            
-       
+            if (!is_null($router))
+                $this->setRouter($router);
         }
-     
- 
+
         $url = $this->rewriteRouter();
 
         $context = new RequestContext($url);
         $matcher = new UrlMatcher($this->routeCollection, $context);
 
+
         if ($this->validateUrl($context, $this->routeCollection)) {
             return $matcher->match($url);
         } else {
+            $this->exception->getLogger()->addWarning('router not found:' . $url);
             return "";
         }
     }
@@ -103,6 +119,16 @@ class Router extends Component {
         $this->route();
         $url = $this->routeCollection->get($router);
         return $url->getPath();
+    }
+
+    /**
+     * 
+     * @param type $name
+     * @return type
+     */
+    public function get($name) {
+        $this->route();
+        return $this->routeCollection->get($name);
     }
 
     protected function validateUrl($context, RouteCollection $urls) {

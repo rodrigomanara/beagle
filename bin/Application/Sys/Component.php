@@ -4,6 +4,7 @@ namespace Beagle\Application\Sys;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Beagle\Application\Exception\ExceptionRouter;
 
 /**
  * 
@@ -11,6 +12,15 @@ use Symfony\Component\HttpFoundation\Session\Session;
  * @author Rodrigo Manara <rmanara@lightspeedresearch>
  */
 abstract class Component {
+
+    CONST ROOT        = __ROOT;
+    CONST VIEW        = __VIEW;
+    CONST CONFIG      = __CONFIG;
+    CONST ROUTE       = __ROUTE;
+    CONST CACHE       = __CACHE;
+    CONST UPLOAD      = __UPLOAD;
+    CONST FILES       = __FILES;
+    CONST LOGS        = __LOGS;
 
     /**
      *
@@ -41,7 +51,34 @@ abstract class Component {
      * @param type $url
      */
     public function redirectTo($url) {
-        header("location:{$url}");
+
+        try {
+            exit(header("location:{$url}"));
+        } catch (\Exception $e) {
+            echo "<meta http-equiv=\"refresh\" content=\"0; url={$url}/\" />";
+        }
+    }
+
+    /**
+     * 
+     * @param type $class_name
+     * @return type
+     */
+    protected function getDir($class_name=null) {
+
+        if (is_null($class_name) or empty($class_name)) {
+            return null;
+        } else {
+            try {
+                $reflector = new \ReflectionClass($class_name);
+                return dirname($reflector->getFileName());
+            } catch (\Exception $e) {
+                $ex = new ExceptionRouter('component');
+                $ex->getLogger()->addDebug($e->getMessage());
+
+                return null;
+            }
+        }
     }
 
 }
